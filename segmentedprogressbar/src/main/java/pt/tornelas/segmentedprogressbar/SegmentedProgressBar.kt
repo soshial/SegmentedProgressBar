@@ -51,7 +51,7 @@ class SegmentedProgressBar : View, Runnable, ViewPager.OnPageChangeListener, Vie
 
     private var segments = mutableListOf<Segment>()
     private val selectedSegment: Segment?
-        get() = segments.firstOrNull { it.animationState == Segment.AnimationState.ANIMATING }
+        get() = segments.firstOrNull { it.animationState == Segment.AnimationState.ANIMATING } ?: segmentCount-1
     private val selectedSegmentIndex: Int
         get() = segments.indexOf(this.selectedSegment)
 
